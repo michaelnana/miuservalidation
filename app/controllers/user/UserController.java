@@ -12,7 +12,15 @@ import play.mvc.Result;
 import services.StringServices;
 
 public class UserController extends Controller {
-    UserAPI userAPI = new UserFacade();
+    UserAPI userAPI;
+
+    public UserController () {
+        userAPI = new UserFacade();
+    }
+
+    public UserController(UserAPI api) {
+        userAPI = api;
+    }
 
     public Result register() {
         DynamicForm form = Form.form().bindFromRequest();
