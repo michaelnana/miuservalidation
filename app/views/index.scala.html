@@ -18,30 +18,35 @@
 </head>
 <body data-ng-app="app" data-ng-controller="dashboardController as dashboard">
 <div class="container">
-    <div class="row">
-        <div id="myModal" class="modal" role="dialog">
-            <div class="modal-dialog">
+    <div id="myModal" class="modal" role="dialog">
+        <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
                 </div>
-
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
             </div>
+
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header"><h2>Registration</h2></div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    User Access
+                    Register
                 </div>
                 <div class="panel-body">
                     <form name="registerForm" novalidate>
@@ -55,7 +60,8 @@
                                    type="text"
                                    required
                                    data-ng-minlength="5">
-                            <div class="help-block" data-ng-messages="registerForm.username.$error" data-ng-if="registerForm.username.$touched">
+                            <div class="help-block" data-ng-messages="registerForm.username.$error"
+                                 data-ng-if="registerForm.username.$touched">
                                 <p data-ng-message="minlength">Your username is too short.</p>
                                 <p data-ng-message="required">Your username is required.</p>
                             </div>
@@ -69,14 +75,16 @@
                                    data-ng-minlength="8"
                                    required
                                    type="password">
-                            <div class="help-block" data-ng-messages="registerForm.password.$error" data-ng-if="registerForm.password.$touched">
+                            <div class="help-block" data-ng-messages="registerForm.password.$error"
+                                 data-ng-if="registerForm.password.$touched">
                                 <p data-ng-message="minlength">Your password is too short.</p>
                                 <p data-ng-message="required">Your password is required.</p>
                             </div>
                         </div>
                         <button class="btn btn-primary"
                                 data-ng-disabled="registerForm.username.$pristine || !registerForm.username.$valid"
-                                data-ng-click="dashboard.register()">Login</button>
+                                data-ng-click="dashboard.register()">Login
+                        </button>
                     </form>
                 </div>
             </div>

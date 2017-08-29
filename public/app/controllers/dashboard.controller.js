@@ -11,10 +11,10 @@ function DashboardController ($scope, userFactory) {
                     dashboard.username,
                     dashboard.password,
                     function (response) {
-                        console.log("Success: " + JSON.stringify(response));
+                        toastr.success('User was successfully added');
                     },
                     function (response) {
-                        console.log("Error: " + JSON.stringify(response));
+                        toastr.error(response.data.errorMessage, 'User Registration Failure');
                     }
                 )
     } else {
