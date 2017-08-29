@@ -9,6 +9,7 @@ import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
+import services.StringServices;
 
 public class UserController extends Controller {
     UserAPI userAPI = new UserFacade();
@@ -16,9 +17,9 @@ public class UserController extends Controller {
     public Result register() {
         DynamicForm form = Form.form().bindFromRequest();
         String username = form.get("username");
-        boolean validUsername = checkValidity(username, "^[A-Za-z0-9]{5,}$");
+        boolean validUsername = StringServices.checkValidity(username, "^[A-Za-z0-9]{5,}$");
         String password = form.get("password");
-        boolean validPassword = checkValidity(password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
+        boolean validPassword = StringServices.checkValidity(password, "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
 
         if (validUsername && validPassword) {
             return apiRegisterResult(userAPI.register(username, password));
@@ -39,14 +40,6 @@ public class UserController extends Controller {
             json.put("registrationSuccessful", userResult.getSuccess());
             json.put("errorMessage", userResult.getErrorMessage());
             return notFound(json);
-        }
-    }
-
-    private boolean checkValidity(String wordToCheck, String regex) {
-        if (wordToCheck != null) {
-            return wordToCheck.matches(regex);
-        } else {
-            return false;
         }
     }
 }
