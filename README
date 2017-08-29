@@ -1,6 +1,8 @@
-<h1>Welcome to miuservalidation</h1>
-<h3>Getting Started</h3>
-<p>This is an assignment that takes a username and password and adds it to a db if they are both valid.</p>
-<p>For a live demo, go to <a href="https://miuseraccess.herokuapp.com/">https://miuseraccess.herokuapp.com/</a> to see this in action. </p>
-<p>If you want to run this locally, make sure you have activator 1.3.12 installed and simple run activator run in the project root.</p>
-<h4>Have fun!</h4>
+Welcome to miuservalidation
+
+Getting Started
+
+This is an assignment that takes a username and password and adds it to a db if they are both valid.
+For a live demo, go to <a href="https://miuseraccess.herokuapp.com/">https://miuseraccess.herokuapp.com/</a> to see this in action.
+If you want to run this locally, make sure you have activator 1.3.12 installed and simple run activator run in the project root.
+Have fun!
