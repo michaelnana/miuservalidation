@@ -4,7 +4,7 @@ function UserFactory ($http) {
     var register = function (username, password, success, failure) {
         $http({
             method: 'POST',
-            url: '/register',
+            url: '/users',
             data: {username: username, password: password}
         }).then(success, failure);
     }
